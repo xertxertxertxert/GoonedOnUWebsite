@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Owners Area - Gooned On U ESports</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function checkPassword() {
+      const password = prompt("Enter the password:");
+      if (password !== "KatlatIsSigmaFRFR") {
+        alert("Incorrect password!");
+        window.location.href = "index.html";
+      }
+    }
+    window.onload = checkPassword;
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Gooned On U ESports</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="owners.html">Owners Area</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Owners Area</h2>
+    <p>Welcome, Owner! This area is restricted to authorized personnel only.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gooned On U ESports. All rights reserved.</p>
+  </footer>
+</body>
+</html>
