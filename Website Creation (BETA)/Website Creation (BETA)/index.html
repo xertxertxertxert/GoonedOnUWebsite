@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<div id="logoAnimation" style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #6d4ead;">
+  <h1 style="color: white; font-size: 3em; animation: popIn 2s forwards;">Gooned On U Esports</h1>
+</div>
+<body style="text-align: center;">
+  <div style="margin-top: 30px;">
+    <a href="index.html">
+      <button style="padding: 10px 20px; background-color: #6d4ead; border: none; color: white; font-size: 16px; border-radius: 8px; cursor: pointer;">
+        Back to Home
+      </button>
+    </a>
+  </div>
+  
+<style>
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+setTimeout(() => {
+  document.getElementById('logoAnimation').style.display = 'none';
+}, 2500); // 2.5 second intro
+</script>
+<html lang="en">
+<head>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>Gooned On U ESports - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  <header>
+    <h1>Gooned On U ESports</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="owners.html">Owners Area</a>
+      <a href="application.html">Application</a> <!-- New Button -->
+    </nav>    
+  </header>
+
+  <main>
+    <h2>Welcome to Gooned On U ESports</h2>
+    <p>Your number one destination for competitive gaming excellence.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gooned On U ESports. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+<div style="text-align: center; margin-top: 30px;">
+  <a href="https://discord.gg/vd5hfWj329" target="_blank" style="text-decoration: none;">
+    <button style="padding: 12px 25px; background-color: #7289da; border: none; color: white; font-size: 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px;">
+      <img src="images/discord-icon.png" alt="Discord" style="width: 30px; animation: bounce 1.5s infinite;">
+      Join Our Discord
+    </button>
+  </a>
+</div>
+
+<style>
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+</style>

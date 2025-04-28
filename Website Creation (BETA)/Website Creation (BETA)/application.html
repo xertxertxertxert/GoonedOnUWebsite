@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div style="margin-top: 30px;">
+        <a href="index.html">
+          <button style="padding: 10px 20px; background-color: #6d4ead; border: none; color: white; font-size: 16px; border-radius: 8px; cursor: pointer;">
+            Back to Home
+          </button>
+        </a>
+      </div>
+      
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>Application - Gooned On U ESports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  <header>
+    <h1>Gooned On U ESports</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="owners.html">Owners Area</a>
+      <a href="application.html">Application</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Join the Team - Application</h2>
+    <form id="applicationForm">
+      <label>1. What device do you play on?</label><br>
+      <input type="text" name="device" required><br><br>
+
+      <label>2. Do you have any earnings / PR?</label><br>
+      <input type="text" name="earnings" required><br><br>
+
+      <label>3. What is your Discord and Fortnite user?</label><br>
+      <input type="text" name="users" required><br><br>
+
+      <label>4. How good are your mechanics?</label><br>
+      <input type="text" name="mechanics" required><br><br>
+
+      <label>5. How good are your builds?</label><br>
+      <input type="text" name="builds" required><br><br>
+
+      <label>6. How good is your aim?</label><br>
+      <input type="text" name="aim" required><br><br>
+
+      <label>7. Do you play Reload, ZB, or Builds?</label><br>
+      <input type="text" name="modes" required><br><br>
+
+      <label>8. Peak rank in all 3 modes?</label><br>
+      <input type="text" name="rank" required><br><br>
+
+      <label>9. How old are you?</label><br>
+      <input type="number" name="age" required><br><br>
+
+      <p><strong>MUST READ:</strong> If you get accepted, you must change your name to ___ Gooned On U (font must be readable). Failure to comply will result in denial or termination.</p>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gooned On U ESports. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('applicationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const entries = Object.fromEntries(formData.entries());
+
+      let storedApps = JSON.parse(localStorage.getItem('applications')) || [];
+      storedApps.push(entries);
+      localStorage.setItem('applications', JSON.stringify(storedApps));
+
+      window.location.href = 'thankyou.html';
+    });
+  </script>
+</body>
+</html>

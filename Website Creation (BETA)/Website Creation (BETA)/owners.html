@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <div style="margin-top: 30px;">
+    <a href="index.html">
+      <button style="padding: 10px 20px; background-color: #6d4ead; border: none; color: white; font-size: 16px; border-radius: 8px; cursor: pointer;">
+        Back to Home
+      </button>
+    </a>
+  </div>  
+  <body style="text-align: center;">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>Owners Area - Gooned On U ESports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  <header>
+    <h1>Gooned On U ESports</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="owners.html">Owners Area</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Owners Panel</h2>
+    <div id="applicationsList"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gooned On U ESports. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const password = prompt("Enter password:");
+    if (password !== "KatlatIsSigmaFRFR") {
+      alert("Access Denied!");
+      window.location.href = "index.html";
+    } else {
+      const listDiv = document.getElementById('applicationsList');
+      const apps = JSON.parse(localStorage.getItem('applications')) || [];
+      const decisions = JSON.parse(localStorage.getItem('decisions')) || [];
+  
+      if (apps.length === 0) {
+        listDiv.innerHTML = "<p>No applications yet.</p>";
+      } else {
+        apps.forEach((app, index) => {
+          const card = document.createElement('div');
+          card.classList.add('application-card');
+          card.innerHTML = `
+            <h3>Application #${index + 1}</h3>
+            <pre>${JSON.stringify(app, null, 2)}</pre>
+            <button onclick="accept(${index})">Accept</button>
+            <button onclick="deny(${index})">Deny</button>
+          `;
+          listDiv.appendChild(card);
+        });
+      }
+  
+      window.accept = function(index) {
+        decisions.push({ app: apps[index], decision: 'Accepted' });
+        localStorage.setItem('decisions', JSON.stringify(decisions));
+        alert("Player Accepted ✅");
+        location.reload();
+      }
+  
+      window.deny = function(index) {
+        decisions.push({ app: apps[index], decision: 'Denied' });
+        localStorage.setItem('decisions', JSON.stringify(decisions));
+        alert("Player Denied ❌");
+        location.reload();
+      }
+    }
+  </script>  
+</body>
+</html>
